@@ -1,0 +1,93 @@
+body{
+    margin: 0;
+}
+/*Navbar to create room*/
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(11, 11, 77);
+    color: white;
+    height: 40px;
+    padding: 8px 10px;
+    font-size: 17px;
+}
+#roomC {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    margin-top: 20px;
+}
+#createbutton{
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+}
+/*Header to join room*/
+#headd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding: 8px 10px;
+    font-size: 17px;
+}
+#headd div{
+    margin: 20px;
+}
+#headd div input{
+    border-radius: 10px;
+    width: 600px;
+    height: 30px;
+}
+#joinButton{
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(84, 83, 83);
+    color: white;
+}
+
+/*Main content*/
+#nav-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+#main-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+div div p {
+    width: 300px;
+    
+}
+#show-room{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    padding: 10px 12px;
+}
+#show-room:nth-child(even) {
+    background: rgb(211, 211, 211);
+}
+#dot {
+    height: 7px;
+    width: 7px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0px 3px 2px 5px;
+    background-color: blue;
+}
+button{
+    cursor: pointer;
+}

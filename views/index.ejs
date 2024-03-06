@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+    <nav>
+        <div></div>
+        <form method="post" id="roomC">
+            <label style="font-weight: 600;" for="">CREATE NEW ROOM</label>
+            <div>
+                <label for="">Name Room : </label>
+                <input on type="text" name="createRoom" id="">
+            </div>
+
+            <button id="createButton">Create</button>
+        </form>
+
+        <div>
+
+            <a href="/signOut"> <button id="createButton" style="background-color: rgb(195, 24, 24); color: white;">Sign
+                    out</button></a>
+
+        </div>
+
+    </nav>
+
+
+    <form method="post" id="headd">
+        <div>
+            <label for="">ID room :</label>
+            <input type="text" name="joinRoom" id="">
+        </div>
+        <button type="submit" id="joinButton">Join</button>
+    </form>
+    <div id="nav-content" style="background-color: rgb(211, 211, 211);">
+        <div id="show-room">
+            <p style="margin-left: 10px;">ID room</p>
+            <p style="margin-left: 200px;">Name room</p>
+            <p></p>
+        </div>
+
+    </div>
+    <div id="main-content">
+        <% for(i=0;i<=lengthRoom-1;i++) {%>
+            <div id="show-room">
+                <p><span id="dot"></span>
+                    <%= room[i].roomId %>
+                </p>
+                <p>
+                    <%= room[i].name_room %>
+                </p>
+                <form method="post" id="mem-join">
+                    <input style="display: none;" type="text" name="joinRoom" value="<%= room[i].roomId %>">
+                    <button id="joinButton" style="margin-right: 10px;">Join</button>
+                </form>
+            </div>
+            <%}%>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+    </script>
+
+</body>
+
+
+
+</html>

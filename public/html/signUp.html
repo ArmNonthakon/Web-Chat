@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/signUpStyle.css">
+    <script src="axios.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="signUp-block">
+        <h1>Sign up</h1>
+        <form method="post" id="sign">
+            <label for="">Name</label>
+            <input type="text" name="username" id="">
+            <label for="">Email</label>
+            <input type="text" name="email" id="">
+            <label for="">Password</label>
+            <input type="password" name="password" id="">
+            <label for="">Confirm Password</label>
+            <input type="password" name="firmPassword" id="">
+            <button type="submit">Sign up</button>
+            <a href="/login" style="margin-top: 8px; color: black;">Already have account. Login?</a>
+        </form>
+    </div>
+
+
+
+
+
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    const orderSocket = io("/chat"); 
+</script>
+
+</html>

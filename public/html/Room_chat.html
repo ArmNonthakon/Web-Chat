@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-size: 17px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        #messages {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #messages>li {
+            padding: 0.5rem 1rem;
+            height: 30px;
+            margin: 0px 8px 2px 0px;
+        }
+
+        #messages>li:nth-child(odd) {
+            background: #efefef;
+        }
+
+        #dot {
+            height: 7px;
+            width: 7px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0px 8px 2px 0px;
+            background-color: blue;
+        }
+
+        #dotOut {
+            height: 7px;
+            width: 7px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0px 8px 2px 0px;
+            background-color: rgb(255, 0, 0);
+        }
+
+        header {
+            background-color: #bbb;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 500;
+            background-color: rgb(11, 11, 77);
+            color: white;
+            padding: 10px;
+        }
+
+        #form {
+            background: rgba(0, 0, 0, 0.15);
+            padding: 0.25rem;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            height: 3rem;
+            box-sizing: border-box;
+            backdrop-filter: blur(10px);
+        }
+
+        #input {
+            border: none;
+            padding: 0 1rem;
+            flex-grow: 1;
+            border-radius: 2rem;
+            margin: 0.25rem;
+        }
+
+        #input:focus {
+            outline: none;
+        }
+
+        #form>button {
+            background: #333;
+            border: none;
+            padding: 0 1rem;
+            margin: 0.25rem;
+            border-radius: 3px;
+            outline: none;
+            color: #fff;
+        }
+
+        #roomJoin {
+            margin-left: 5px;
+        }
+
+        #roomInput {
+            width: 90px;
+        }
+
+        #newUser {
+            display: flex;
+            align-items: center;
+
+        }
+
+        #quitButton {
+            background-color: red;
+            width: 110px;
+            height: 30px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <p>Your Name : Arm</p>
+        <p>Room : 15486</p>
+        
+        <a href="/"><button id="quitButton">Quit</button></a> 
+    </header>
+    <ul id="messages">
+
+    </ul>
+    <form id="form" action="">
+        <input id="input" autocomplete="off" /><button id="Send">Send</button>
+    </form>
+    <script>
+        const socket = io('/chat');
+    </script>
+</body>
+
+</html>

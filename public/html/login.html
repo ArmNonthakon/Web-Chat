@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/signUpStyle.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="signUp-block">
+        <h1>Login</h1>
+        <form method="post" id="sign">
+            <label for="">Email</label>
+            <input type="text" name="email" id="">
+            <label for="">Password</label>
+            <input type="text" name="password" id="">
+            <button onclick="login()">Login</button>
+            <a href="/signUp" style="margin-top: 8px; color: black;">Do not have account. sign up?</a>
+        </form>
+    </div>
+
+
+
+
+
+</body>
+
+<script>
+    const login = async () => {
+        console.log("fsad")
+
+        const inemail = document.querySelector('input[name=email]').value
+        const inpassword = document.querySelector('input[name=password]').value
+        const t = await post('/login', {
+            email: inemail,
+            password: inpassword
+        })
+            .then(function (response) {
+                alert(response);
+            })
+            .catch(function (error) {
+                alert(error);
+            });
+    }
+
+
+</script>
+
+</html>
